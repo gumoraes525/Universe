@@ -14,10 +14,14 @@ authors = [
 ]
 dependencies = [
   "astropy>=6.0",
+  "click>=8.1",
   "jsonschema>=4.0",
   "numpy>=1.26",
   "pydantic>=2.0",
 ]
+
+[project.scripts]
+universe-gen = "universe_gen.cli:main"
 
 [project.optional-dependencies]
 dev = [
@@ -60,6 +64,7 @@ warn_unused_configs = true
 warn_return_any = true
 warn_unreachable = true
 show_error_codes = true
+ignore_missing_imports = true
 
 [tool.pytest.ini_options]
 minversion = "8.0"

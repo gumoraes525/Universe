@@ -1,0 +1,51 @@
+{
+  "$id": "https://universe-gen.local/schemas/common/provenance.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Provenance",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "seed_chain",
+    "generated_at",
+    "generator_version"
+  ],
+  "properties": {
+    "seed_chain": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "key",
+          "entropy"
+        ],
+        "properties": {
+          "key": {
+            "type": "string"
+          },
+          "entropy": {
+            "type": "integer",
+            "minimum": 0
+          }
+        },
+        "additionalProperties": false
+      }
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "generator_version": {
+      "type": "string"
+    },
+    "parent_ids": {
+      "type": "array",
+      "items": {
+        "$ref": "identifiers.schema.json"
+      },
+      "default": []
+    },
+    "stage": {
+      "type": "string"
+    }
+  }
+}

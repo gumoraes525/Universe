@@ -1,0 +1,41 @@
+{
+  "$id": "https://universe-gen.local/schemas/common/validation_status.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Validation status",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "accepted",
+    "severity"
+  ],
+  "properties": {
+    "accepted": {
+      "type": "boolean"
+    },
+    "severity": {
+      "type": "string",
+      "enum": [
+        "warning",
+        "error",
+        "fatal"
+      ]
+    },
+    "reason_codes": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    },
+    "message": {
+      "type": "string"
+    },
+    "repair_suggestions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "default": []
+    }
+  }
+}

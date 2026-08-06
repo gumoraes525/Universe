@@ -1,0 +1,8 @@
+{
+  "$id": "https://universe-gen.local/schemas/common/identifiers.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Hierarchical identifier",
+  "description": "Stable dot-notation ID such as universe.galaxy.system.body.",
+  "type": "string",
+  "pattern": "^[a-z][a-z0-9_]*(\\.[a-z][a-z0-9_]*)*$"
+}
