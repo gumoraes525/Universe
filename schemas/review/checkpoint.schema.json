@@ -1,0 +1,42 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Review checkpoint",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "checkpoint_id",
+    "stage",
+    "generated_set",
+    "shortlist",
+    "provenance"
+  ],
+  "properties": {
+    "checkpoint_id": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "generated_set": {
+      "type": "array",
+      "items": {
+        "$ref": "../common/identifiers.schema.json"
+      }
+    },
+    "shortlist": {
+      "type": "array",
+      "items": {
+        "$ref": "selection.schema.json"
+      }
+    },
+    "reviewer_notes": {
+      "type": "string"
+    },
+    "accepted": {
+      "type": "boolean"
+    },
+    "provenance": {
+      "$ref": "../common/provenance.schema.json"
+    }
+  }
+}

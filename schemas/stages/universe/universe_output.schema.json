@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Universe output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "master_seed",
+    "cosmic_parameters",
+    "fundamental_constants",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "../../common/identifiers.schema.json"
+    },
+    "provenance": {
+      "$ref": "../../common/provenance.schema.json"
+    },
+    "validation_status": {
+      "$ref": "../../common/validation_status.schema.json"
+    },
+    "master_seed": {
+      "type": "integer",
+      "minimum": 0
+    },
+    "cosmic_parameters": {
+      "type": "object",
+      "required": [
+        "hubble_constant",
+        "omega_matter",
+        "omega_lambda"
+      ],
+      "properties": {
+        "hubble_constant": {
+          "$ref": "../../common/units.schema.json"
+        },
+        "omega_matter": {
+          "type": "number",
+          "minimum": 0
+        },
+        "omega_lambda": {
+          "type": "number",
+          "minimum": 0
+        }
+      },
+      "additionalProperties": false
+    },
+    "fundamental_constants": {
+      "type": "object",
+      "additionalProperties": {
+        "$ref": "../../common/units.schema.json"
+      }
+    }
+  }
+}

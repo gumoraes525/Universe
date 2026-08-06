@@ -1,0 +1,21 @@
+{
+  "$id": "https://universe-gen.local/schemas/common/units.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SI quantity",
+  "description": "Numeric value with a VOUnits-compatible SI unit string.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "value",
+    "unit"
+  ],
+  "properties": {
+    "value": {
+      "type": "number"
+    },
+    "unit": {
+      "type": "string",
+      "pattern": "^(m|kg|s|K|A|mol|cd|rad|sr|Hz|N|Pa|J|W|C|V|F|Ohm|S|Wb|T|H|lm|lx|Bq|Gy|Sv|kat)([./*^0-9A-Za-z -]*)?$"
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "stellar_system output",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "objects",
+    "provenance"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "../../common/identifiers.schema.json"
+    },
+    "provenance": {
+      "$ref": "../../common/provenance.schema.json"
+    },
+    "validation_status": {
+      "$ref": "../../common/validation_status.schema.json"
+    },
+    "objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "id",
+          "properties"
+        ],
+        "properties": {
+          "id": {
+            "$ref": "../../common/identifiers.schema.json"
+          },
+          "classification": {
+            "type": "string"
+          },
+          "properties": {
+            "type": "object",
+            "additionalProperties": {
+              "oneOf": [
+                {
+                  "$ref": "../../common/units.schema.json"
+                },
+                {
+                  "type": "string"
+                },
+                {
+                  "type": "number"
+                },
+                {
+                  "type": "boolean"
+                }
+              ]
+            }
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}

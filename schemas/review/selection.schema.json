@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Review selection",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "id",
+    "selected",
+    "rationale"
+  ],
+  "properties": {
+    "id": {
+      "$ref": "../common/identifiers.schema.json"
+    },
+    "selected": {
+      "type": "boolean"
+    },
+    "rationale": {
+      "type": "string",
+      "minLength": 1
+    },
+    "reviewer": {
+      "type": "string"
+    }
+  }
+}
